@@ -7,11 +7,12 @@
     <link rel="stylesheet" href="assets/style/style.css">
     <!-- <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous"> -->
     <script src="assets/js/index.js"></script>
+    <script src="assets/js/models/apartment.js"></script>
   </head>
   <body>
     <div class="container">
-      <div id="client-list">
-        <ul class="list-group" id="customer-list">
+      <div id="apartment-list">
+        <ul class="list-group" id="apartment-list">
           <!-- Wstaw tutaj liste klientow -->
         </ul>
            
@@ -21,22 +22,22 @@
         </h1>
         <div class="d-flex justify-content-center">
             <div class="w-50">
-              <form onsubmit="return false">
+              <form onsubmit="return save(event)">
                 <div class="mb-3 content-center">
                   <label for="street" class="form-label">Ulica</label>
                   <input type="text" class="form-control" id="street">
                 </div>
                 <div class="mb-3">
-                  <label for="housenr" class="form-label">Numer mieszkania</label>
-                  <input type="number" class="form-control" id="housenr" required>
+                  <label for="flatNumber" class="form-label">Numer mieszkania</label>
+                  <input type="number" class="form-control" id="flatNumber" required>
                 </div>
                 <div class="mb-3">
                     <label for="city" class="form-label">Miasto</label>
                     <input type="text" class="form-control" id="city" required>
                   </div>
                   <div class="mb-3">
-                    <label for="metraż" class="form-label">Powierzchnia mieszkania</label>
-                    <input type="number" class="form-control" id="metraż" required>
+                    <label for="surface" class="form-label">Powierzchnia mieszkania</label>
+                    <input type="number" class="form-control" id="surface" required>
                   </div>
                   <div class="mb-3">
                     <label for="floor" class="form-label">Piętro</label>
@@ -52,8 +53,8 @@
                     <textarea type="text" class="form-control" id="comments"></textarea>
                   </div>
                   <div class="mb-3">
-                    <label for="industry" class="form-label">Dzielnica</label>
-                    <select type="number" class="form-control" id="industry">
+                    <label for="district" class="form-label">Dzielnica</label>
+                    <select type="number" class="form-control" id="district">
                       <option value="1">Nowa Huta</option>
                       <option value="2">Stare Miasto</option>
                       <option value="3">Kazimierz</option>
@@ -66,13 +67,14 @@
                     </select>
                   </div>
                   <div class="mb-3 form-check">
-                    <input type="checkbox" class="form-check-input" id="active">
+                    <input type="checkbox" class="form-check-input" id="furnished">
                     <label class="form-check-label" for="active">Umeblowane</label>
                   </div>
                 </div>
-                <button type="submit" class="btn btn-primary" onclick="save()">Save</button>
+                <button type="submit" class="btn btn-primary" >Save</button>
               </form>
-              <button class="btn btn-primary" onclick="submit()">Add to form</button>
+             
+              
             </div>
           </div>
     </div>
