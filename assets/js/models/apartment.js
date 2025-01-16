@@ -9,7 +9,8 @@ class Apartment{
     zipCode = "";
     comments = "";
     disctrict = "";
-    furnished = true
-
+    furnished = true;
+    latitude = "";
+    longitude = "";
    
 }
