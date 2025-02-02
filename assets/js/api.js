@@ -4,7 +4,7 @@ async function getCoordinates(address) {
     const params = {
         q: address,
         format: 'json',
-        addressdetails: 1 // Aby uzyskać szczegółowe informacje o adresie
+        addressdetails: 1 
     };
     const headers = {
         'User-Agent': 'app.js/1.0 (kontakt@example.com)'
@@ -24,12 +24,12 @@ async function getCoordinates(address) {
             const latitude = parseFloat(data[0].lat);
             const longitude = parseFloat(data[0].lon);
 
-            // Wyodrębnienie miasta z odpowiedzi
+            
             const addressDetails = data[0].address || {};
             let city = addressDetails.city || addressDetails.town || addressDetails.village;
 
             if (!city) {
-                // Jeśli miasto nie jest dostępne, próbujemy inne pola
+                
                 city = addressDetails.county || 'Nieznane';
             }
 
